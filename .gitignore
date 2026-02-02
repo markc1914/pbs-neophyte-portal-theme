@@ -25,3 +25,9 @@ Thumbs.db
 *.tmp
 *.temp
 *.log
+
+# Build artifacts
+package.zip
+
+# Test screenshots (large files, keep local only)
+testingScreenshots/*.png
