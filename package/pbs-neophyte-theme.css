@@ -328,32 +328,10 @@ html body .RadGrid {
     background-image: none !important;
 }
 
-/* Ensure header elements stay blue - override any white backgrounds */
+/* Header background blue */
 #hd,
 #masterHeaderBackground {
-    background-color: var(--pbs-blue) !important;
-}
-
-/* Header child elements should be transparent (not white) */
-#masterHeaderImage,
-#masterLogoArea,
-#masterTopBarAuxiliary,
-#hd > div:not(.RadMenu),
-#hd > table {
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* Hide broken hamburger icon characters that render as white rectangles */
-.rmSlide > span,
-.rmToggle > span,
-.rmExpandHandle,
-.rmCollapseHandle {
-    font-size: 0 !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+    background-color: #164F90 !important;
 }
 
 /* Make sure content text is readable */
@@ -690,60 +668,9 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   BANNER IMAGE - Don't override structure
+   BANNER - Let iMIS handle it completely
    ========================================== */
-/* Let iMIS handle the banner - just ensure it's visible */
-#masterHeaderImage,
-#masterDonorHeaderImage {
-    display: block !important;
-    visibility: visible !important;
-}
-
-/* Site title fallback */
-#hd .SiteTitle,
-#hd h1:not(.rmText) {
-    display: block !important;
-    color: #ffffff !important;
-    font-family: var(--pbs-font-family) !important;
-    font-size: 2rem !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-    margin: var(--pbs-spacing-md) 0 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-}
-
-/* Header text styling */
-#hd h1,
-#hd h2,
-#hd .SiteTitle {
-    color: #ffffff !important;
-    margin: 0;
-}
-
-/* Mobile header */
-@media (max-width: 767px) {
-    #masterHeaderImage,
-    #masterDonorHeaderImage {
-        height: 50px !important;
-        min-height: 50px !important;
-        max-width: 280px !important;
-    }
-
-    #hd .SiteTitle,
-    #hd h1:not(.rmText) {
-        font-size: 1.25rem !important;
-    }
-
-    #masterTopBarAuxiliary {
-        padding: var(--pbs-spacing-xs) var(--pbs-spacing-sm) !important;
-    }
-
-    #masterTopBarAuxiliary a {
-        font-size: 10px !important;
-        padding: 4px 10px !important;
-    }
-}
+/* No overrides - let original CSS work */
 
 /* Site title text styling - modern and bold */
 .SiteTitle,
