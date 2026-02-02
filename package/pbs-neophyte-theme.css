@@ -239,7 +239,7 @@ a:focus {
     z-index: 1;
 }
 
-/* Force white backgrounds with max specificity */
+/* Force white backgrounds with max specificity - EXCLUDE header elements */
 html body #doc,
 html body #doc2,
 html body #doc3,
@@ -254,10 +254,9 @@ html body .iMISContent,
 html body .WebPartInner,
 html body .ContentItemWebPart,
 html body .ContentHtml,
-html body [id*="Content"],
-html body [class*="Content"],
-html body .Panel,
-html body .PanelBody,
+html body #masterContentArea,
+html body .Panel:not(#hd *),
+html body .PanelBody:not(#hd *),
 html body .MainContent,
 html body .PageContent,
 html body .BodyContent,
@@ -266,6 +265,34 @@ html body .RadGrid {
     background: #ffffff !important;
     background-color: #ffffff !important;
     background-image: none !important;
+}
+
+/* Ensure header elements stay blue - override any white backgrounds */
+#hd,
+#masterHeaderBackground {
+    background-color: var(--pbs-blue) !important;
+}
+
+/* Header child elements should be transparent (not white) */
+#masterHeaderImage,
+#masterLogoArea,
+#masterTopBarAuxiliary,
+#hd > div:not(.RadMenu),
+#hd > table {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Hide broken hamburger icon characters that render as white rectangles */
+.rmSlide > span,
+.rmToggle > span,
+.rmExpandHandle,
+.rmCollapseHandle {
+    font-size: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
 
 /* Make sure content text is readable */
@@ -552,28 +579,38 @@ html body #masterContentArea,
     text-align: center;
 }
 
-/* Header banner container */
+/* Header banner container - NO white background */
 #masterHeaderImage,
 .HeaderImage,
-#hd > table,
-#hd > div:first-child {
+#masterLogoArea {
     display: block !important;
-    width: 100% !important;
-    max-width: 600px !important;
-    margin: 0 auto var(--pbs-spacing-md) auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto var(--pbs-spacing-sm) auto !important;
     text-align: center !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Header divs should be transparent */
+#hd > div,
+#hd > table {
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 /* Style header images - show the banner */
 #hd img,
 #masterHeaderImage img,
 .HeaderImage img,
+#masterLogoArea img,
 img[src*="NeophytePortal"],
 img[src*="neophyte"],
 img[src*="banner"],
 img[src*="Banner"],
 img[src*="header"],
-img[src*="Header"] {
+img[src*="Header"],
+img[src*=".svg"] {
     display: block !important;
     visibility: visible !important;
     max-width: 100% !important;
@@ -581,6 +618,7 @@ img[src*="Header"] {
     height: auto !important;
     max-height: 100px !important;
     margin: 0 auto !important;
+    background: transparent !important;
 }
 
 /* If no banner image exists, show site title */
