@@ -65,6 +65,7 @@ Tasks:
 2. **Nav menu text enlarged** - Increased to 14px with better padding and uppercase styling
 3. **Banner size capped** - Added `max-width: 650px` and `max-height: 86px` to prevent distortion at 1440p+
 4. **Skip link hidden** - Added comprehensive CSS selectors to hide "Skip to main content"
+5. **Carousel width limited** - Set `max-width: 1080px` to match content text width below
 
 ---
 
