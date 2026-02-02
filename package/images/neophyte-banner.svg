@@ -9,18 +9,6 @@
   <!-- Background -->
   <rect width="800" height="120" fill="url(#bgGrad)"/>
 
-  <!-- PBS Crest/Seal Image -->
-  <image x="15" y="10" width="100" height="100" xlink:href="pbs-crest.png" preserveAspectRatio="xMidYMid meet"/>
-
-  <!-- NEOPHYTE Text -->
-  <text x="140" y="58" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="3">NEOPHYTE</text>
-
-  <!-- Portal Text (italic) -->
-  <text x="445" y="58" font-family="Georgia, serif" font-size="38" font-style="italic" font-weight="400" fill="#ffffff" opacity="0.9">Portal</text>
-
-  <!-- Tagline -->
-  <text x="140" y="90" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" fill="#ffffff" opacity="0.8" letter-spacing="1.5">PHI BETA SIGMA FRATERNITY, INC.</text>
-
-  <!-- Decorative line -->
-  <line x1="140" y1="102" x2="380" y2="102" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  <!-- PBS Crest/Seal Image - centered -->
+  <image x="350" y="10" width="100" height="100" xlink:href="pbs-crest.png" preserveAspectRatio="xMidYMid meet"/>
 </svg>
