@@ -669,15 +669,18 @@ a[href*="SignOut"]:hover {
 
 /* ==========================================
    BANNER - Display Neophyte Portal banner
+   Capped at 1080p size to prevent distortion
    ========================================== */
 #masterHeaderImage,
 #masterDonorHeaderImage {
     background-image: url("images/NeophytePortalTransparent.png") !important;
     background-repeat: no-repeat !important;
     background-size: contain !important;
-    background-position: center !important;
+    background-position: left center !important;
     width: 60vw !important;
+    max-width: 650px !important;  /* Cap at ~1080p size */
     height: 8vw !important;
+    max-height: 86px !important;  /* Cap at ~1080p size */
     min-width: 270px !important;
     min-height: 60px !important;
     text-indent: -9999px !important;
