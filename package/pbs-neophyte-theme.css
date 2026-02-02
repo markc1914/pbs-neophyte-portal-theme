@@ -620,31 +620,42 @@ html body #masterContentArea,
 /* ==========================================
    7. HEADER - Seamless Blue Header Area
    Everything above content should be one cohesive blue section
+   All elements use the SAME blue (#164F90) for seamless look
    ========================================== */
 
-/* Main header container - seamless blue */
+/* Main header container - solid blue, no gradient */
 #hd {
-    background-color: var(--pbs-blue) !important;
-    background: linear-gradient(180deg, var(--pbs-blue) 0%, var(--pbs-blue-dark) 100%) !important;
+    background-color: #164F90 !important;
+    background: #164F90 !important;
     padding: 0 !important;
-    border-radius: var(--pbs-radius-lg) var(--pbs-radius-lg) 0 0;
+    border-radius: 0 !important;
     position: relative;
 }
 
-/* Header background - same blue */
+/* Header background - same solid blue */
 #masterHeaderBackground {
-    background-color: var(--pbs-blue) !important;
-    background: transparent !important;
+    background-color: #164F90 !important;
+    background: #164F90 !important;
     padding: var(--pbs-spacing-md) var(--pbs-spacing-lg) !important;
     min-height: auto !important;
     height: auto !important;
+}
+
+/* All header child elements - same blue background */
+#hd > *,
+#masterHeaderBackground > *,
+#masterLogoArea,
+#masterHeaderImage,
+#masterDonorHeaderImage {
+    background-color: #164F90 !important;
 }
 
 /* ==========================================
    TOP BAR - Sign Out & Auxiliary Navigation
    ========================================== */
 #masterTopBarAuxiliary {
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: #164F90 !important;
+    background: #164F90 !important;
     padding: var(--pbs-spacing-xs) var(--pbs-spacing-lg) !important;
     text-align: right !important;
     display: flex !important;
@@ -694,7 +705,7 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   BANNER IMAGE - Display via background-image
+   BANNER IMAGE - Use original PNG only
    ========================================== */
 #masterHeaderImage,
 #masterDonorHeaderImage {
@@ -705,18 +716,14 @@ a[href*="SignOut"]:hover {
     height: 80px !important;
     min-height: 80px !important;
     margin: var(--pbs-spacing-md) auto !important;
-    background-image: url("images/neophyte-banner.svg") !important;
+    background-image: url("images/NeophytePortalTransparent.png") !important;
+    background-color: #164F90 !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: contain !important;
     text-indent: -9999px !important;
     overflow: hidden !important;
     position: relative !important;
-}
-
-/* Fallback to PNG if SVG doesn't work */
-#masterHeaderImage {
-    background-image: url("images/NeophytePortalTransparent.png"), url("images/neophyte-banner.svg") !important;
 }
 
 /* Logo area styling */
