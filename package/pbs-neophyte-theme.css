@@ -641,12 +641,15 @@ html body #masterContentArea,
     height: auto !important;
 }
 
-/* All header child elements - same blue background */
-#hd > *,
-#masterHeaderBackground > *,
+/* All header child elements - same blue background, no whitespace */
+#hd > *:not(#masterHeaderImage):not(#masterDonorHeaderImage),
+#masterHeaderBackground,
+#masterHeaderBackground > *:not(#masterHeaderImage):not(#masterDonorHeaderImage),
 #masterLogoArea,
-#masterHeaderImage,
-#masterDonorHeaderImage {
+#hd table,
+#hd td,
+#hd tr,
+#hd div:not(#masterHeaderImage):not(#masterDonorHeaderImage) {
     background-color: #164F90 !important;
 }
 
