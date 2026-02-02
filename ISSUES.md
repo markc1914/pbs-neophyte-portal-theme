@@ -17,6 +17,19 @@ Completed items:
 - Skip-to-main-content link hidden
 - Banner capped at 1080p size to prevent distortion at higher resolutions
 
+### Issue #2: Compare with production and match blue overlay effect ✅
+**Closed: 2026-02-02**
+
+Completed:
+- Header/navigation styling matches
+- Footer matches production design
+- Blue overlay effect compared and matched
+
+### Issue #3: Clean up legacy CSS and remove unused styles ✅
+**Closed: 2026-02-02**
+
+Completed CSS cleanup and optimization.
+
 ---
 
 ## Open Issues
@@ -27,35 +40,6 @@ Completed items:
 The Sign Out button is not visible on the Neophyte Portal. Users cannot sign out.
 
 **Related:** Similar issue was fixed in Member Portal (Issue #11) - may need similar CSS fix.
-
----
-
-### Issue #2: Compare with production and match blue overlay effect
-**Status: In Progress**
-
-Tasks:
-- [x] Header/navigation styling matches
-- [x] Footer matches production design
-- [ ] Compare blue overlay gradient effect (if applicable)
-- [ ] Take screenshots of production for comparison
-
-**Links:**
-- Production: https://members.phibetasigma1914.org/iMIS15/PBSNeophyte
-- DEV: https://members.phibetasigma1914.org/iMISDEV/PBSNeophyte
-
----
-
-### Issue #3: Clean up legacy CSS and remove unused styles
-**Status: Open**
-
-Tasks:
-- [ ] Remove any legacy/unused CSS from base files
-- [ ] Consolidate duplicate rules
-- [ ] Ensure consistent use of CSS variables
-- [ ] Remove Droid Sans font references (replaced with Inter)
-- [ ] Clean up any vendor prefixes that are no longer needed
-
-**Goal:** Lean, maintainable CSS that only includes what's needed.
 
 ---
 
