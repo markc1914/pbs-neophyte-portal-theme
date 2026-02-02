@@ -122,21 +122,32 @@ body {
 }
 
 /* ==========================================
-   4. SKIP LINK (Accessibility)
+   4. SKIP LINK - Hidden completely
    ========================================== */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--pbs-blue);
-    color: var(--pbs-white);
-    padding: var(--pbs-spacing-sm) var(--pbs-spacing-md);
-    z-index: 10000;
-    transition: top 0.2s;
-}
-
-.skip-link:focus {
-    top: 0;
+.skip-link,
+a[href="#main-content"],
+a[href="#content"],
+a[href*="skip"],
+a[href*="Skip"],
+.skipLink,
+#skipLink,
+[class*="skip-link"],
+[class*="skipLink"],
+#hd a:first-child,
+body > a:first-of-type,
+#doc > a:first-of-type,
+#doc3 > a:first-of-type {
+    display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    opacity: 0 !important;
 }
 
 /* ==========================================
@@ -846,16 +857,43 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   8. NAVIGATION - Accessible & Modern
+   8. NAVIGATION - Full Width Blue Bar
    ========================================== */
+
+/* Nav container - FULL WIDTH to edge of screen */
 .RadMenu,
 .RadMenu_Default,
-.rmRootGroup {
-    background-color: var(--pbs-blue) !important;
+.RadMenu_Austin {
+    background-color: #164F90 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     border: none !important;
-    padding: var(--pbs-spacing-xs) 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
 }
 
+/* Root group - full width */
+.rmRootGroup,
+.RadMenu .rmRootGroup,
+.RadMenu > ul {
+    background-color: #164F90 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    padding: var(--pbs-spacing-xs) 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+/* Nav items */
+.RadMenu .rmItem,
+.rmRootGroup > li {
+    background-color: #164F90 !important;
+}
+
+/* Nav links */
 .RadMenu .rmRootLink,
 .RadMenu .rmLink,
 .rmText {
@@ -864,63 +902,91 @@ a[href*="SignOut"]:hover {
     font-weight: 700 !important;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--pbs-text-on-blue) !important;
-    padding: var(--pbs-spacing-sm) var(--pbs-spacing-lg) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #ffffff !important;
+    padding: 12px 20px !important;
+    transition: all 0.2s ease;
     background-color: transparent !important;
-    border-radius: 50px;
-    margin: 2px 4px;
+    border-radius: 0 !important;
+    margin: 0 !important;
     text-decoration: none !important;
-    position: relative;
+    display: block !important;
 }
 
 .RadMenu .rmRootLink:hover,
 .RadMenu .rmLink:hover {
     background-color: rgba(255, 255, 255, 0.15) !important;
-    color: var(--pbs-text-on-blue) !important;
-    transform: translateY(-1px);
+    color: #ffffff !important;
 }
 
 .RadMenu .rmRootLink:focus,
 .RadMenu .rmLink:focus {
-    outline: 2px solid var(--pbs-white) !important;
-    outline-offset: 2px;
-    background-color: var(--pbs-blue-dark) !important;
+    outline: 2px solid #ffffff !important;
+    outline-offset: -2px;
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .RadMenu .rmSelected,
-.RadMenu .rmFocused {
-    background-color: var(--pbs-blue-dark) !important;
-    color: var(--pbs-text-on-blue) !important;
+.RadMenu .rmFocused,
+.RadMenu .rmExpanded > .rmRootLink {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: #ffffff !important;
 }
 
-/* Dropdown Menus */
+/* ==========================================
+   DROPDOWN SUBMENUS - Clean White Style
+   ========================================== */
 .RadMenu .rmGroup,
-.RadMenu .rmScrollWrap {
-    background-color: var(--pbs-white) !important;
-    border: 1px solid var(--pbs-gray-200) !important;
-    box-shadow: var(--pbs-shadow-md);
-    border-radius: var(--pbs-radius-md);
-    margin-top: 4px;
+.RadMenu .rmScrollWrap,
+.RadMenu .rmSlide {
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 8px !important;
+    margin-top: 0 !important;
+    padding: 8px 0 !important;
+    min-width: 200px !important;
+    z-index: 9999 !important;
 }
 
+/* Submenu items */
+.RadMenu .rmGroup .rmItem,
+.RadMenu .rmGroup li {
+    background-color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Submenu links - clean and readable */
 .RadMenu .rmGroup .rmLink,
-.RadMenu .rmGroup .rmText {
-    color: var(--pbs-text-primary) !important;
-    background-color: var(--pbs-white) !important;
-    text-transform: none;
+.RadMenu .rmGroup .rmText,
+.RadMenu .rmGroup a {
+    color: #1a1a1a !important;
+    background-color: #ffffff !important;
+    text-transform: none !important;
+    font-size: 14px !important;
     font-weight: 500 !important;
-    padding: var(--pbs-spacing-sm) var(--pbs-spacing-md) !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    display: block !important;
+    text-decoration: none !important;
+    border-left: 3px solid transparent !important;
+    transition: all 0.15s ease !important;
 }
 
-.RadMenu .rmGroup .rmLink:hover {
-    background-color: var(--pbs-blue) !important;
-    color: var(--pbs-text-on-blue) !important;
+.RadMenu .rmGroup .rmLink:hover,
+.RadMenu .rmGroup a:hover {
+    background-color: #f0f4f8 !important;
+    color: #164F90 !important;
+    border-left-color: #164F90 !important;
 }
 
-.RadMenu .rmGroup .rmLink:focus {
-    outline: 2px solid var(--pbs-blue) !important;
-    outline-offset: -2px;
+.RadMenu .rmGroup .rmLink:focus,
+.RadMenu .rmGroup a:focus {
+    outline: none !important;
+    background-color: #e8eef5 !important;
+    color: #164F90 !important;
+    border-left-color: #164F90 !important;
 }
 
 /* ==========================================
