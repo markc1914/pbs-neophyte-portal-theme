@@ -668,9 +668,24 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   BANNER - Let iMIS handle it completely
+   BANNER - Display Neophyte Portal banner
    ========================================== */
-/* No overrides - let original CSS work */
+#masterHeaderImage,
+#masterDonorHeaderImage {
+    background-image: url("images/NeophytePortalTransparent.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    width: 60vw !important;
+    height: 8vw !important;
+    min-width: 270px !important;
+    min-height: 60px !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    display: block !important;
+    visibility: visible !important;
+}
 
 /* Site title text styling - modern and bold */
 .SiteTitle,
