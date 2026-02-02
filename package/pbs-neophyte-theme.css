@@ -752,13 +752,18 @@ a[href*="SignOut"]:hover {
     background-color: #164F90 !important;
 }
 
-/* Nav links - white text */
+/* Nav links - white text, larger for desktop */
 .RadMenu .rmRootLink,
 .RadMenu .rmLink,
 .rmText {
     font-family: var(--pbs-font-family) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
     color: #ffffff !important;
     text-decoration: none !important;
+    padding: 12px 18px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
 }
 
 .RadMenu .rmRootLink:hover,
