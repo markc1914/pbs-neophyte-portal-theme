@@ -127,16 +127,13 @@ body {
 .skip-link,
 a[href="#main-content"],
 a[href="#content"],
-a[href*="skip"],
-a[href*="Skip"],
+a[href*="SkipLink"],
+a[href*="skiplink"],
 .skipLink,
 #skipLink,
 [class*="skip-link"],
 [class*="skipLink"],
-#hd a:first-child,
-body > a:first-of-type,
-#doc > a:first-of-type,
-#doc3 > a:first-of-type {
+[id*="SkipLink"] {
     display: none !important;
     visibility: hidden !important;
     position: absolute !important;
