@@ -1,0 +1,745 @@
+/*
+ * Phi Beta Sigma Responsive Theme for iMIS
+ * Primary Color: #1a468c
+ * Font: Montserrat
+ * ==========================================
+ */
+
+/* ==========================================
+   1. GOOGLE FONTS IMPORT
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+/* ==========================================
+   2. CSS CUSTOM PROPERTIES (VARIABLES)
+   ========================================== */
+:root {
+    /* Primary Colors */
+    --pbs-primary: #1a468c;
+    --pbs-primary-dark: #133366;
+    --pbs-primary-light: #2a5ba8;
+    --pbs-primary-rgb: 26, 70, 140;
+
+    /* Secondary/Neutral Colors */
+    --pbs-white: #ffffff;
+    --pbs-black: #000000;
+    --pbs-gray-100: #f8f9fa;
+    --pbs-gray-200: #e9ecef;
+    --pbs-gray-300: #dee2e6;
+    --pbs-gray-400: #ced4da;
+    --pbs-gray-500: #adb5bd;
+    --pbs-gray-600: #6c757d;
+    --pbs-gray-700: #495057;
+    --pbs-gray-800: #343a40;
+    --pbs-gray-900: #212529;
+
+    /* Accent Colors (blue variants only) */
+    --pbs-accent: #2a5ba8; /* Light blue accent */
+    --pbs-success: #28a745;
+    --pbs-warning: #ffc107;
+    --pbs-danger: #dc3545;
+    --pbs-info: #1a468c;
+
+    /* Typography */
+    --pbs-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --pbs-font-size-base: 16px;
+    --pbs-font-size-sm: 14px;
+    --pbs-font-size-lg: 18px;
+    --pbs-font-size-xl: 20px;
+    --pbs-line-height: 1.6;
+
+    /* Heading Sizes */
+    --pbs-h1-size: 2.5rem;
+    --pbs-h2-size: 2rem;
+    --pbs-h3-size: 1.75rem;
+    --pbs-h4-size: 1.5rem;
+    --pbs-h5-size: 1.25rem;
+    --pbs-h6-size: 1rem;
+
+    /* Spacing */
+    --pbs-spacing-xs: 0.25rem;
+    --pbs-spacing-sm: 0.5rem;
+    --pbs-spacing-md: 1rem;
+    --pbs-spacing-lg: 1.5rem;
+    --pbs-spacing-xl: 2rem;
+    --pbs-spacing-xxl: 3rem;
+
+    /* Border Radius */
+    --pbs-radius-sm: 4px;
+    --pbs-radius-md: 8px;
+    --pbs-radius-lg: 12px;
+    --pbs-radius-full: 50%;
+
+    /* Shadows */
+    --pbs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --pbs-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --pbs-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --pbs-transition: all 0.3s ease;
+
+    /* Container Widths */
+    --pbs-container-sm: 540px;
+    --pbs-container-md: 720px;
+    --pbs-container-lg: 960px;
+    --pbs-container-xl: 1140px;
+    --pbs-container-xxl: 1320px;
+}
+
+/* ==========================================
+   3. CSS RESET & BASE STYLES
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--pbs-font-size-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--pbs-font-family) !important;
+    font-size: var(--pbs-font-size-base);
+    font-weight: 400;
+    line-height: var(--pbs-line-height);
+    color: var(--pbs-gray-900);
+    background-color: var(--pbs-white);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   4. TYPOGRAPHY - GLOBAL FONT STANDARDIZATION
+   ========================================== */
+
+/* Force Montserrat on ALL elements */
+body,
+html,
+div,
+span,
+p,
+a,
+li,
+ul,
+ol,
+table,
+th,
+td,
+form,
+input,
+textarea,
+select,
+button,
+label,
+legend,
+fieldset,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+h1, h2, h3, h4, h5, h6,
+.RadMenu,
+.RadMenu *,
+.rmRootGroup,
+.rmLink,
+.rmText,
+[class*="Telerik"],
+[class*="telerik"],
+[class*="rad"],
+[class*="Rad"],
+.PanelField,
+.PanelFieldValue,
+.TextContent,
+.ContentArea,
+.iMISContent,
+.LoginPanel,
+.LoginPanel *,
+.FooterPanel,
+.HeaderPanel,
+#ContentArea,
+#HeaderArea,
+#FooterArea,
+#NavigationArea {
+    font-family: var(--pbs-font-family) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--pbs-font-family) !important;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: var(--pbs-spacing-md);
+    color: var(--pbs-gray-900);
+}
+
+h1, .h1 { font-size: var(--pbs-h1-size); }
+h2, .h2 { font-size: var(--pbs-h2-size); }
+h3, .h3 { font-size: var(--pbs-h3-size); }
+h4, .h4 { font-size: var(--pbs-h4-size); }
+h5, .h5 { font-size: var(--pbs-h5-size); }
+h6, .h6 { font-size: var(--pbs-h6-size); }
+
+/* Paragraphs */
+p {
+    margin-top: 0;
+    margin-bottom: var(--pbs-spacing-md);
+}
+
+/* Links */
+a {
+    color: var(--pbs-primary);
+    text-decoration: none;
+    transition: var(--pbs-transition);
+}
+
+a:hover,
+a:focus {
+    color: var(--pbs-primary-dark);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   5. HEADER & NAVIGATION
+   ========================================== */
+.HeaderPanel,
+#HeaderArea,
+header,
+.header {
+    background-color: transparent;
+    color: var(--pbs-gray-900);
+    padding: var(--pbs-spacing-md) 0;
+}
+
+/* Telerik RadMenu Overrides */
+.RadMenu,
+.RadMenu_Default,
+.rmRootGroup {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.RadMenu .rmRootLink,
+.RadMenu .rmLink,
+.rmText {
+    font-family: var(--pbs-font-family) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--pbs-primary) !important;
+    padding: var(--pbs-spacing-xs) var(--pbs-spacing-sm) !important;
+    transition: var(--pbs-transition);
+}
+
+.RadMenu .rmRootLink:hover,
+.RadMenu .rmLink:hover,
+.RadMenu .rmSelected,
+.RadMenu .rmFocused {
+    background-color: var(--pbs-primary) !important;
+    color: var(--pbs-white) !important;
+}
+
+/* Dropdown Menus */
+.RadMenu .rmGroup,
+.RadMenu .rmScrollWrap {
+    background-color: var(--pbs-white) !important;
+    border: 1px solid var(--pbs-gray-300) !important;
+    box-shadow: var(--pbs-shadow-md);
+    border-radius: var(--pbs-radius-sm);
+}
+
+.RadMenu .rmGroup .rmLink,
+.RadMenu .rmGroup .rmText {
+    color: var(--pbs-gray-900) !important;
+}
+
+.RadMenu .rmGroup .rmLink:hover {
+    background-color: var(--pbs-primary) !important;
+    color: var(--pbs-white) !important;
+}
+
+/* ==========================================
+   6. BUTTONS
+   ========================================== */
+button,
+input[type="submit"],
+input[type="button"],
+.btn,
+.Button,
+.PrimaryButton,
+.SecondaryButton,
+a.btn {
+    font-family: var(--pbs-font-family) !important;
+    font-size: var(--pbs-font-size-base);
+    font-weight: 600;
+    padding: var(--pbs-spacing-sm) var(--pbs-spacing-lg);
+    border: 2px solid transparent;
+    border-radius: var(--pbs-radius-sm);
+    cursor: pointer;
+    transition: var(--pbs-transition);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+/* Primary Button */
+.btn-primary,
+.PrimaryButton,
+input[type="submit"],
+.LoginButton {
+    background-color: var(--pbs-primary) !important;
+    border-color: var(--pbs-primary) !important;
+    color: var(--pbs-white) !important;
+}
+
+.btn-primary:hover,
+.PrimaryButton:hover,
+input[type="submit"]:hover,
+.LoginButton:hover {
+    background-color: var(--pbs-primary-dark) !important;
+    border-color: var(--pbs-primary-dark) !important;
+    color: var(--pbs-white) !important;
+}
+
+/* Secondary/Outline Button */
+.btn-secondary,
+.btn-outline,
+.SecondaryButton {
+    background-color: transparent !important;
+    border-color: var(--pbs-primary) !important;
+    color: var(--pbs-primary) !important;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover,
+.SecondaryButton:hover {
+    background-color: var(--pbs-primary) !important;
+    color: var(--pbs-white) !important;
+}
+
+/* ==========================================
+   7. FORMS
+   ========================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="date"],
+textarea,
+select,
+.TextBox,
+.DropDownList {
+    font-family: var(--pbs-font-family) !important;
+    font-size: var(--pbs-font-size-base);
+    padding: var(--pbs-spacing-sm) var(--pbs-spacing-md);
+    border: 1px solid var(--pbs-gray-400);
+    border-radius: var(--pbs-radius-sm);
+    background-color: var(--pbs-white);
+    color: var(--pbs-gray-900);
+    transition: var(--pbs-transition);
+    width: 100%;
+    max-width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--pbs-primary);
+    box-shadow: 0 0 0 3px rgba(var(--pbs-primary-rgb), 0.15);
+}
+
+label,
+.FieldLabel,
+.PanelFieldLabel {
+    font-family: var(--pbs-font-family) !important;
+    font-weight: 600;
+    font-size: var(--pbs-font-size-sm);
+    color: var(--pbs-gray-700);
+    display: block;
+    margin-bottom: var(--pbs-spacing-xs);
+}
+
+/* ==========================================
+   8. TABLES
+   ========================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--pbs-spacing-lg);
+}
+
+th, td {
+    font-family: var(--pbs-font-family) !important;
+    padding: var(--pbs-spacing-sm) var(--pbs-spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--pbs-gray-300);
+}
+
+th {
+    background-color: var(--pbs-primary);
+    color: var(--pbs-white);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: var(--pbs-gray-100);
+}
+
+/* Responsive Tables */
+@media (max-width: 767px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: var(--pbs-spacing-md);
+        border: 1px solid var(--pbs-gray-300);
+        border-radius: var(--pbs-radius-sm);
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid var(--pbs-gray-200);
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: var(--pbs-spacing-md);
+        width: 45%;
+        font-weight: 600;
+        color: var(--pbs-gray-700);
+    }
+}
+
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+.FooterPanel,
+#FooterArea,
+footer,
+.footer {
+    background-color: var(--pbs-gray-900);
+    color: var(--pbs-white);
+    padding: var(--pbs-spacing-xl) 0;
+    margin-top: var(--pbs-spacing-xxl);
+}
+
+.FooterPanel a,
+footer a {
+    color: var(--pbs-gray-300);
+}
+
+.FooterPanel a:hover,
+footer a:hover {
+    color: var(--pbs-white);
+}
+
+/* ==========================================
+   10. iMIS SPECIFIC OVERRIDES
+   ========================================== */
+
+/* Login Panel */
+.LoginPanel,
+.SignInPanel,
+#LoginControl {
+    background-color: var(--pbs-white);
+    padding: var(--pbs-spacing-xl);
+    border-radius: var(--pbs-radius-md);
+    box-shadow: var(--pbs-shadow-md);
+    max-width: 400px;
+    margin: var(--pbs-spacing-xl) auto;
+}
+
+/* Content Areas */
+.ContentArea,
+.TextContent,
+.PanelContent,
+#ContentArea {
+    padding: var(--pbs-spacing-lg);
+}
+
+/* iParts */
+.ContentItemPart,
+.iPart,
+[id*="ContentItemPart"] {
+    margin-bottom: var(--pbs-spacing-lg);
+}
+
+/* Panels */
+.Panel,
+.PanelGroup {
+    background-color: var(--pbs-white);
+    border: 1px solid var(--pbs-gray-300);
+    border-radius: var(--pbs-radius-md);
+    padding: var(--pbs-spacing-lg);
+    margin-bottom: var(--pbs-spacing-lg);
+}
+
+.PanelHeader,
+.PanelTitle {
+    font-family: var(--pbs-font-family) !important;
+    font-size: var(--pbs-h4-size);
+    font-weight: 700;
+    color: var(--pbs-primary);
+    margin-bottom: var(--pbs-spacing-md);
+    padding-bottom: var(--pbs-spacing-sm);
+    border-bottom: 2px solid var(--pbs-primary);
+}
+
+/* Error/Validation Messages */
+.ValidationError,
+.ErrorMessage,
+.error {
+    color: var(--pbs-danger);
+    font-size: var(--pbs-font-size-sm);
+    margin-top: var(--pbs-spacing-xs);
+}
+
+.SuccessMessage,
+.success {
+    color: var(--pbs-success);
+}
+
+/* ==========================================
+   11. UTILITY CLASSES
+   ========================================== */
+.text-primary { color: var(--pbs-primary) !important; }
+.text-white { color: var(--pbs-white) !important; }
+.text-muted { color: var(--pbs-gray-600) !important; }
+
+.bg-primary { background-color: var(--pbs-primary) !important; }
+.bg-white { background-color: var(--pbs-white) !important; }
+.bg-light { background-color: var(--pbs-gray-100) !important; }
+.bg-dark { background-color: var(--pbs-gray-900) !important; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-weight-normal { font-weight: 400 !important; }
+.font-weight-medium { font-weight: 500 !important; }
+.font-weight-semibold { font-weight: 600 !important; }
+.font-weight-bold { font-weight: 700 !important; }
+
+/* ==========================================
+   12. RESPONSIVE CONTAINER
+   ========================================== */
+.container,
+.pbs-container {
+    width: 100%;
+    padding-right: var(--pbs-spacing-md);
+    padding-left: var(--pbs-spacing-md);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container, .pbs-container { max-width: var(--pbs-container-sm); }
+}
+
+@media (min-width: 768px) {
+    .container, .pbs-container { max-width: var(--pbs-container-md); }
+}
+
+@media (min-width: 992px) {
+    .container, .pbs-container { max-width: var(--pbs-container-lg); }
+}
+
+@media (min-width: 1200px) {
+    .container, .pbs-container { max-width: var(--pbs-container-xl); }
+}
+
+@media (min-width: 1400px) {
+    .container, .pbs-container { max-width: var(--pbs-container-xxl); }
+}
+
+/* ==========================================
+   13. RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    :root {
+        --pbs-font-size-base: 14px;
+        --pbs-h1-size: 1.75rem;
+        --pbs-h2-size: 1.5rem;
+        --pbs-h3-size: 1.25rem;
+        --pbs-h4-size: 1.125rem;
+    }
+
+    .HeaderPanel,
+    #HeaderArea {
+        padding: var(--pbs-spacing-sm) 0;
+    }
+
+    .RadMenu .rmRootLink,
+    .RadMenu .rmLink {
+        padding: var(--pbs-spacing-xs) var(--pbs-spacing-sm) !important;
+        font-size: 12px !important;
+    }
+
+    .LoginPanel,
+    .SignInPanel {
+        margin: var(--pbs-spacing-md);
+        padding: var(--pbs-spacing-md);
+    }
+
+    .ContentArea,
+    .TextContent {
+        padding: var(--pbs-spacing-md);
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    :root {
+        --pbs-h1-size: 2rem;
+        --pbs-h2-size: 1.75rem;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Tablet-specific styles */
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Desktop styles - defaults apply */
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    :root {
+        --pbs-h1-size: 3rem;
+        --pbs-h2-size: 2.5rem;
+    }
+}
+
+/* ==========================================
+   14. MOBILE NAVIGATION (Hamburger Menu)
+   ========================================== */
+@media (max-width: 991.98px) {
+    /* Hide horizontal menu on mobile */
+    .RadMenu .rmRootGroup {
+        flex-direction: column !important;
+    }
+
+    .RadMenu .rmRootGroup > li {
+        width: 100% !important;
+    }
+
+    .RadMenu .rmRootLink {
+        width: 100% !important;
+        text-align: left !important;
+    }
+}
+
+/* ==========================================
+   15. PRINT STYLES
+   ========================================== */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    .HeaderPanel,
+    .FooterPanel,
+    .RadMenu {
+        display: none !important;
+    }
+
+    .ContentArea {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* ==========================================
+   16. ACCESSIBILITY ENHANCEMENTS
+   ========================================== */
+
+/* Focus Indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 2px solid var(--pbs-primary);
+    outline-offset: 2px;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--pbs-primary);
+    color: var(--pbs-white);
+    padding: var(--pbs-spacing-sm) var(--pbs-spacing-md);
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --pbs-primary: #0d2d5e;
+        --pbs-gray-600: #333333;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

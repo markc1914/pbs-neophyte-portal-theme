@@ -1,0 +1,27 @@
+# Credentials - NEVER commit these
+test-users.json
+credentials.json
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test outputs (optional - can be tracked if needed)
+# testingScreenshots/*.png
+
+# Temporary files
+*.tmp
+*.temp
+*.log

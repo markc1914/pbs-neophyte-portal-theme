@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ThemeSettings>
+  <ThemeName>PBS-NEOPHYTE-THEME-MODERN</ThemeName>
+  <Description>Phi Beta Sigma Neophyte Portal Modern Responsive Theme</Description>
+  <CssFiles>
+    <CssFile>pbs-neophyte-theme.css</CssFile>
+  </CssFiles>
+</ThemeSettings>
