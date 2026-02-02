@@ -30,16 +30,21 @@ Completed:
 
 Completed CSS cleanup and optimization.
 
+### Issue #4: Sign Out button not visible ✅
+**Closed: 2026-02-02**
+
+**Resolution:** This is an iMIS configuration issue, not CSS. The Sign Out element (`a#ctl00_LoginStatus1`) does not exist in the page HTML.
+
+**Action Required:** Add Login Status web part to master page in iMIS Staff:
+- RiSE → Website → Master Pages → Edit → Add Login Status web part
+
+CSS styling is ready and will apply automatically once the element exists.
+
 ---
 
 ## Open Issues
 
-### Issue #4: Sign Out button not visible 🔴 HIGH PRIORITY
-**Status: Open**
-
-The Sign Out button is not visible on the Neophyte Portal. Users cannot sign out.
-
-**Related:** Similar issue was fixed in Member Portal (Issue #11) - may need similar CSS fix.
+*No open issues*
 
 ---
 
