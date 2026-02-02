@@ -626,30 +626,12 @@ html body #masterContentArea,
 }
 
 /* ==========================================
-   7. HEADER - Seamless Blue Header Area
+   7. HEADER - Keep original structure, just style
    ========================================== */
 
-/* Main header container */
-#hd {
-    background-color: #164F90 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-}
-
-/* Header background */
+/* Header background - blue */
+#hd,
 #masterHeaderBackground {
-    background-color: #164F90 !important;
-    padding: 10px 20px !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-
-/* Header inner elements - blue background */
-#masterLogoArea,
-#masterTopBarAuxiliary,
-#hd table,
-#hd td,
-#hd tr {
     background-color: #164F90 !important;
 }
 
@@ -708,45 +690,13 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   BANNER IMAGE - Match original positioning
+   BANNER IMAGE - Don't override structure
    ========================================== */
+/* Let iMIS handle the banner - just ensure it's visible */
 #masterHeaderImage,
 #masterDonorHeaderImage {
-    background-image: url("images/NeophytePortalTransparent.png") !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-position: center !important;
-    background-color: transparent !important;
-    width: 60vw !important;
-    height: 8vw !important;
-    min-width: 270px !important;
-    min-height: 60px !important;
-    max-height: 100px !important;
-    text-indent: -9999px !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: 10px !important;
-}
-
-/* Header background needs enough height for banner */
-#masterHeaderBackground {
-    background-color: #164F90 !important;
-    min-height: 100px !important;
-    position: relative !important;
-}
-
-/* Logo area styling */
-#masterLogoArea {
-    text-align: center !important;
-    background-color: #164F90 !important;
-}
-
-/* Hide any stray images in header */
-#hd > img,
-#masterHeaderBackground > img {
-    display: none !important;
+    display: block !important;
+    visibility: visible !important;
 }
 
 /* Site title fallback */
@@ -849,56 +799,24 @@ a[href*="SignOut"]:hover {
 }
 
 /* ==========================================
-   8. NAVIGATION - Visible and Styled
+   8. NAVIGATION - Keep working, just style
    ========================================== */
 
-/* Nav container */
+/* Nav container - blue background */
 .RadMenu,
 .RadMenu_Default,
-.RadMenu_Austin {
-    background-color: #164F90 !important;
-    display: block !important;
-    visibility: visible !important;
-    width: 100% !important;
-}
-
-/* Root group */
-.rmRootGroup,
-.RadMenu .rmRootGroup {
-    background-color: #164F90 !important;
-    display: flex !important;
-    visibility: visible !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 5px 0 !important;
-}
-
-/* Nav items - ensure visible */
-.RadMenu .rmItem,
-.RadMenu li,
-.rmRootGroup > li {
-    display: inline-block !important;
-    visibility: visible !important;
+.RadMenu_Austin,
+.rmRootGroup {
     background-color: #164F90 !important;
 }
 
-/* Nav links - ensure visible */
+/* Nav links - white text */
 .RadMenu .rmRootLink,
 .RadMenu .rmLink,
-.RadMenu a.rmLink {
-    display: block !important;
-    visibility: visible !important;
+.rmText {
     font-family: var(--pbs-font-family) !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
     color: #ffffff !important;
-    padding: 10px 18px !important;
     text-decoration: none !important;
-    background-color: transparent !important;
 }
 
 .RadMenu .rmRootLink:hover,
@@ -914,27 +832,15 @@ a[href*="SignOut"]:hover {
     background-color: #ffffff !important;
     border: 1px solid #e0e0e0 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    border-radius: 4px !important;
-    padding: 5px 0 !important;
-    min-width: 180px !important;
-    z-index: 9999 !important;
 }
 
 /* Submenu links */
-.RadMenu .rmGroup .rmLink,
-.RadMenu .rmGroup a {
+.RadMenu .rmGroup .rmLink {
     color: #333333 !important;
     background-color: #ffffff !important;
-    text-transform: none !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    padding: 10px 16px !important;
-    display: block !important;
-    text-decoration: none !important;
 }
 
-.RadMenu .rmGroup .rmLink:hover,
-.RadMenu .rmGroup a:hover {
+.RadMenu .rmGroup .rmLink:hover {
     background-color: #f5f5f5 !important;
     color: #164F90 !important;
 }
