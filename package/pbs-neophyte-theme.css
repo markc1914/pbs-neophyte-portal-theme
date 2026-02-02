@@ -1013,14 +1013,14 @@ tbody tr:hover {
 .carousel.slide,
 [id*="Carousel"],
 [id*="HomeSlideshow"] .carousel {
-    max-width: 1200px !important;
+    max-width: 1080px !important;
     width: 100% !important;
     margin: 0 auto !important;
 }
 
 .carousel-inner,
 .carousel-inner .item {
-    max-width: 1200px !important;
+    max-width: 1080px !important;
     width: 100% !important;
 }
 
