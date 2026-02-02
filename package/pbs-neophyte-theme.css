@@ -127,13 +127,24 @@ body {
 .skip-link,
 a[href="#main-content"],
 a[href="#content"],
+a[href="#maincontent"],
 a[href*="SkipLink"],
 a[href*="skiplink"],
+a[href*="MainContent"],
+a[href*="maincontent"],
 .skipLink,
 #skipLink,
 [class*="skip-link"],
 [class*="skipLink"],
-[id*="SkipLink"] {
+[id*="SkipLink"],
+/* Target first link before header if it's skip link */
+body > a:first-child,
+#doc > a:first-child,
+#Form1 > a:first-child,
+form > a:first-child,
+/* Target by common iMIS patterns */
+a[href="#ctl00_MainContentPlaceholder"],
+a[href*="MainContentPlaceholder"] {
     display: none !important;
     visibility: hidden !important;
     position: absolute !important;
