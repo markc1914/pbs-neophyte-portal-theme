@@ -21,6 +21,15 @@ Completed items:
 
 ## Open Issues
 
+### Issue #4: Sign Out button not visible 🔴 HIGH PRIORITY
+**Status: Open**
+
+The Sign Out button is not visible on the Neophyte Portal. Users cannot sign out.
+
+**Related:** Similar issue was fixed in Member Portal (Issue #11) - may need similar CSS fix.
+
+---
+
 ### Issue #2: Compare with production and match blue overlay effect
 **Status: In Progress**
 
