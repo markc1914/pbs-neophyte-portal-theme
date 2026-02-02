@@ -680,7 +680,7 @@ a[href*="SignOut"]:hover {
 
 /* ==========================================
    BANNER - Display Neophyte Portal banner
-   Capped at 1080p size to prevent distortion
+   Width matches content area below (1200px max)
    ========================================== */
 #masterHeaderImage,
 #masterDonorHeaderImage {
@@ -688,17 +688,18 @@ a[href*="SignOut"]:hover {
     background-repeat: no-repeat !important;
     background-size: contain !important;
     background-position: left center !important;
-    width: 60vw !important;
-    max-width: 650px !important;  /* Cap at ~1080p size */
-    height: 8vw !important;
-    max-height: 86px !important;  /* Cap at ~1080p size */
-    min-width: 270px !important;
+    width: 100% !important;
+    max-width: 400px !important;  /* Match content text width */
+    height: auto !important;
     min-height: 60px !important;
+    max-height: 80px !important;
     text-indent: -9999px !important;
     overflow: hidden !important;
-    position: absolute !important;
+    position: relative !important;
     display: block !important;
     visibility: visible !important;
+    margin: 0 !important;
+    padding: 10px 0 !important;
 }
 
 /* Site title text styling - modern and bold */
@@ -1003,6 +1004,30 @@ tbody tr:hover {
     border-radius: var(--pbs-radius-md);
     padding: var(--pbs-spacing-lg);
     margin-bottom: var(--pbs-spacing-lg);
+}
+
+/* ==========================================
+   CAROUSEL/SLIDESHOW - Match content width
+   ========================================== */
+.carousel,
+.carousel.slide,
+[id*="Carousel"],
+[id*="HomeSlideshow"] .carousel {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.carousel-inner,
+.carousel-inner .item {
+    max-width: 1200px !important;
+    width: 100% !important;
+}
+
+/* Ensure carousel images scale properly */
+.carousel-inner .item {
+    background-size: cover !important;
+    background-position: center !important;
 }
 
 .PanelHeader,
