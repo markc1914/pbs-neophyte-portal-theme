@@ -638,14 +638,25 @@ html body #masterContentArea,
     gap: var(--pbs-spacing-md) !important;
 }
 
-/* Sign Out and other auxiliary links */
+/* Sign Out and other auxiliary links - MUST BE VISIBLE */
 #masterTopBarAuxiliary a,
 #masterTopBarAuxiliary .NavigationLink,
+a[id*="SignOut"],
+a[id*="signout"],
+a[id*="Logout"],
+a[id*="logout"],
+a[id*="LoginStatus"],
 a[href*="Sign_Out"],
 a[href*="SignOut"],
 a[href*="sign-out"],
 a[href*="Logout"],
-a[href*="logout"] {
+a[href*="logout"],
+.NavigationListItem a[id*="SignOut"],
+.NavigationListItem a[id*="Logout"],
+#hd a[id*="SignOut"],
+#hd a[id*="Logout"] {
+    display: inline-block !important;
+    visibility: visible !important;
     color: #ffffff !important;
     font-family: var(--pbs-font-family) !important;
     font-size: 12px !important;
@@ -658,10 +669,13 @@ a[href*="logout"] {
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 20px !important;
     transition: all 0.2s ease !important;
-    display: inline-block !important;
+    position: relative !important;
+    z-index: 100 !important;
 }
 
 #masterTopBarAuxiliary a:hover,
+a[id*="SignOut"]:hover,
+a[id*="Logout"]:hover,
 a[href*="Sign_Out"]:hover,
 a[href*="SignOut"]:hover {
     background: rgba(255, 255, 255, 0.25) !important;
@@ -676,6 +690,52 @@ a[href*="SignOut"]:hover {
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* ==========================================
+   SIGN OUT BUTTON - Ensure visibility (Issue #4)
+   ========================================== */
+/* Auth link container - ensure visible */
+.auth-link-container,
+#navbar-collapse .auth-link-container,
+[class*="auth-link"],
+[id*="LoginStatus"] {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Sign Out link with specific iMIS IDs */
+a#ctl01_LoginStatus1,
+a[id$="LoginStatus1"],
+a[id*="LoginStatus"],
+.auth-link-container a,
+.auth-link-container .auth-link,
+#navbar-collapse .auth-link,
+#hd .auth-link {
+    display: inline-block !important;
+    visibility: visible !important;
+    color: #ffffff !important;
+    font-family: var(--pbs-font-family) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    text-decoration: none !important;
+    padding: 6px 14px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 20px !important;
+    z-index: 1000 !important;
+}
+
+a#ctl01_LoginStatus1:hover,
+a[id*="LoginStatus"]:hover,
+.auth-link-container a:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* ==========================================
