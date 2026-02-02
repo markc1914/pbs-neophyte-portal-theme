@@ -302,7 +302,90 @@ html body .RadGrid {
 /* ==========================================
    CRITICAL FIX: Content alignment
    Force content to start from left edge
+   Target iMIS/PBS specific structure
    ========================================== */
+
+/* MAIN FIX: #masterContentArea has width:55vw in iMIS CSS - override it! */
+#masterContentArea {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: var(--pbs-spacing-xl) !important;
+    float: none !important;
+    display: block !important;
+    background-color: #ffffff !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+}
+
+/* Reset the 55vw width from PBSNeophytes.css */
+html body #masterContentArea,
+#doc #masterContentArea,
+#doc3 #masterContentArea,
+.yui-t2 #masterContentArea {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: var(--pbs-spacing-2xl) !important;
+}
+
+/* Main content column - force full width */
+.col-primary {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    padding: var(--pbs-spacing-lg) !important;
+}
+
+/* Hide or collapse the right sidebar */
+.col-secondary,
+.col-secondary.cs-right,
+.cs-right {
+    display: none !important;
+    width: 0 !important;
+    float: none !important;
+}
+
+/* Container resets */
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Body container */
+.body-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Content panels */
+.ContentPanel,
+[class*="ContentPanel"],
+[id*="ContentPanel"] {
+    width: 100% !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    padding: var(--pbs-spacing-md) !important;
+    float: none !important;
+}
+
+/* WebPart containers */
+[id*="WebPartManager"],
+[class*="WebPart"],
+.WebPartInner {
+    width: 100% !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    float: none !important;
+}
 
 /* Reset ALL YUI grid floats and margins */
 #doc #bd,
@@ -311,12 +394,13 @@ html body .RadGrid {
 #doc4 #bd,
 #bd {
     margin: 0 !important;
-    padding: var(--pbs-spacing-xl) !important;
+    padding: 0 !important;
     float: none !important;
     clear: both !important;
     width: 100% !important;
 }
 
+/* YUI main content area */
 #yui-main {
     float: none !important;
     margin: 0 !important;
@@ -341,59 +425,116 @@ html body .RadGrid {
     width: 100% !important;
 }
 
+/* yui-t2 template specific - remove sidebar column */
+.yui-t2 .yui-b,
+#masterWrapper.yui-t2 .yui-b {
+    margin-left: 0 !important;
+    float: none !important;
+    width: 100% !important;
+}
+
 /* Force content areas to full width, left aligned */
 .TextContent,
 .ContentArea,
 .ContentHtml,
 #ContentArea,
 .iMISContent,
-.WebPartInner,
-[class*="Content"] {
+.HomePageContent,
+.HomePageFullWidthArea {
     float: none !important;
     margin: 0 !important;
     margin-left: 0 !important;
-    padding-left: 0 !important;
+    padding: var(--pbs-spacing-lg) !important;
     width: 100% !important;
     max-width: 100% !important;
     text-align: left !important;
 }
 
-/* Reset any inherited margins on all content children */
-#bd > *,
-#bd > * > *,
-.ContentArea > *,
-.TextContent > *,
-#yui-main > *,
-#yui-main .yui-b > * {
+/* Exclude footer from content resets */
+[class*="Content"]:not([class*="footer"]):not(.ContentRecordPageButtonPanel):not([class*="Footer"]) {
+    float: none !important;
     margin-left: 0 !important;
-    padding-left: 0 !important;
+    text-align: left !important;
+}
+
+/* ContentItem containers with proper margins */
+.ContentItemContainer {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: var(--pbs-spacing-md) 0 !important;
+}
+
+/* Reset Bootstrap columns to full width */
+.col-sm-6,
+.col-sm-12 {
+    width: 100% !important;
+    float: none !important;
+    padding: var(--pbs-spacing-sm) 0 !important;
+}
+
+/* Reset any inherited margins on all content children - with margins */
+#bd > *,
+#masterContentArea > *,
+.ContentArea > *,
+.TextContent > * {
+    margin-left: 0 !important;
     float: none !important;
 }
 
-/* Specifically target intro text that may be shifted */
-#bd p:first-of-type,
-.ContentArea p:first-of-type,
-.TextContent p:first-of-type {
+/* Give text paragraphs proper margins */
+#masterContentArea p,
+.ContentArea p,
+.TextContent p,
+#bd p {
     margin-left: 0 !important;
+    margin-bottom: var(--pbs-spacing-md) !important;
+    padding-left: 0 !important;
+    line-height: 1.7 !important;
+}
+
+/* Headings in content area */
+#masterContentArea h1,
+#masterContentArea h2,
+#masterContentArea h3,
+#masterContentArea h4,
+.ContentArea h1,
+.ContentArea h2,
+.ContentArea h3 {
+    margin-left: 0 !important;
+    margin-bottom: var(--pbs-spacing-md) !important;
     padding-left: 0 !important;
 }
 
-#yui-main {
-    width: 100% !important;
+/* Lists in content area */
+#masterContentArea ul,
+#masterContentArea ol,
+.ContentArea ul,
+.ContentArea ol {
+    margin-left: var(--pbs-spacing-lg) !important;
+    padding-left: var(--pbs-spacing-md) !important;
+    margin-bottom: var(--pbs-spacing-md) !important;
 }
 
-#yui-main .yui-b {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+#masterContentArea li,
+.ContentArea li {
+    margin-bottom: var(--pbs-spacing-xs) !important;
 }
 
-/* Content area - maximize width */
+/* Content area margins for better readability */
 .ContentArea,
 .TextContent,
 #ContentArea,
 .iMISContent {
     max-width: 100% !important;
-    padding: var(--pbs-spacing-md);
+    padding: var(--pbs-spacing-lg) !important;
+}
+
+/* Main Panel styling */
+#MainPanel {
+    background-color: #ffffff !important;
+    padding: var(--pbs-spacing-lg) !important;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 /* ==========================================
@@ -1029,13 +1170,19 @@ footer img:hover {
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }
 
+    /* Content area margins - keep text away from screen edges */
     #bd {
-        padding: var(--pbs-spacing-md) !important;
+        padding: var(--pbs-spacing-lg) !important;
+    }
+
+    #masterContentArea {
+        padding: var(--pbs-spacing-lg) !important;
+        margin: 0 !important;
     }
 
     .ContentArea,
     .TextContent {
-        padding: var(--pbs-spacing-sm);
+        padding: var(--pbs-spacing-md) !important;
     }
 
     input[type="text"],
@@ -1055,116 +1202,87 @@ footer img:hover {
     }
 
     /* ==========================================
-       MOBILE HAMBURGER NAVIGATION
+       MOBILE NAVIGATION - Vertical Stack
+       (No JS hamburger toggle available in iMIS)
        ========================================== */
 
     /* Header adjustments for mobile */
     #hd {
-        padding: var(--pbs-spacing-md) !important;
+        padding: var(--pbs-spacing-sm) !important;
         position: relative;
     }
 
-    /* Navigation container */
+    /* Banner image on mobile */
+    #masterHeaderImage,
+    #masterDonorHeaderImage,
+    .HeaderLogo,
+    #hd img {
+        display: block !important;
+        visibility: visible !important;
+        max-width: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        max-height: 60px !important;
+        margin: 0 auto var(--pbs-spacing-sm) auto !important;
+    }
+
+    /* Navigation container - make it compact */
     .RadMenu,
     .RadMenu_Default,
     .RadMenu_Austin {
-        position: relative !important;
+        width: 100% !important;
+        background-color: var(--pbs-blue) !important;
+        padding: var(--pbs-spacing-xs) !important;
     }
 
-    /* Create hamburger button using label/checkbox hack or existing toggle */
-    .rmToggle,
-    .RadMenu .rmToggle,
-    .navbar-toggler,
-    .menu-toggle,
-    .rmSlide {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 48px !important;
-        height: 48px !important;
-        background: rgba(255, 255, 255, 0.15) !important;
-        border: 2px solid rgba(255, 255, 255, 0.3) !important;
-        border-radius: 10px !important;
-        cursor: pointer !important;
-        z-index: 1001 !important;
-        position: relative !important;
-    }
-
-    /* Hamburger lines */
-    .rmToggle::before,
-    .rmSlide::before,
-    .menu-toggle::before {
-        content: "" !important;
-        display: block !important;
-        width: 24px !important;
-        height: 3px !important;
-        background: #ffffff !important;
-        border-radius: 2px !important;
-        box-shadow: 0 -8px 0 #ffffff, 0 8px 0 #ffffff !important;
-    }
-
-    /* Hide main navigation by default on mobile */
+    /* Show menu as horizontal scrollable or wrap */
     .RadMenu .rmRootGroup,
     .RadMenu > ul,
     .rmRootGroup,
     .RadMenu ul.rmRootGroup {
-        display: none !important;
-        position: absolute !important;
-        top: 60px !important;
-        left: 0 !important;
-        right: 0 !important;
-        background: linear-gradient(180deg, var(--pbs-blue-dark) 0%, var(--pbs-blue) 100%) !important;
-        flex-direction: column !important;
-        padding: var(--pbs-spacing-md) !important;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
-        border-radius: 0 0 12px 12px !important;
-        z-index: 1000 !important;
-        max-height: 70vh !important;
-        overflow-y: auto !important;
-    }
-
-    /* Show menu when expanded/opened - multiple trigger states */
-    .RadMenu.rmExpanded .rmRootGroup,
-    .RadMenu.rmOpened .rmRootGroup,
-    .RadMenu .rmRootGroup.rmExpanded,
-    .RadMenu .rmRootGroup.rmOpened,
-    .RadMenu[aria-expanded="true"] .rmRootGroup,
-    .rmRootGroup:target,
-    .RadMenu:focus-within .rmRootGroup,
-    .rmToggle:checked ~ .rmRootGroup,
-    .rmToggle.rmExpanded + .rmRootGroup,
-    input[type="checkbox"]:checked ~ .rmRootGroup {
         display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        padding: var(--pbs-spacing-xs) !important;
+        background-color: var(--pbs-blue) !important;
+        position: relative !important;
+        width: 100% !important;
     }
 
-    /* Mobile nav items - full width, stacked */
+    /* Mobile nav items - compact buttons */
     .RadMenu .rmRootGroup > li,
     .rmRootGroup > li {
-        width: 100% !important;
-        margin: 0 !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        margin: 2px !important;
     }
 
+    /* Compact nav buttons */
     .RadMenu .rmRootLink,
     .RadMenu .rmLink,
     .rmRootLink,
     .rmLink {
-        display: block !important;
-        width: 100% !important;
+        display: inline-block !important;
+        width: auto !important;
         text-align: center !important;
-        padding: 14px 20px !important;
-        margin: 4px 0 !important;
-        border-radius: 10px !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        font-size: 15px !important;
+        padding: 8px 12px !important;
+        margin: 2px !important;
+        border-radius: 6px !important;
+        background: rgba(255, 255, 255, 0.15) !important;
+        font-size: 11px !important;
         font-weight: 600 !important;
-        letter-spacing: 0.05em !important;
+        letter-spacing: 0.03em !important;
+        text-transform: uppercase !important;
+        color: #ffffff !important;
+        white-space: nowrap !important;
     }
 
     .RadMenu .rmRootLink:hover,
     .RadMenu .rmLink:hover,
     .RadMenu .rmRootLink:focus,
     .RadMenu .rmLink:focus {
-        background: rgba(255, 255, 255, 0.25) !important;
+        background: rgba(255, 255, 255, 0.3) !important;
         transform: none !important;
     }
 
@@ -1173,9 +1291,18 @@ footer img:hover {
         display: none !important;
     }
 
-    /* Ensure content doesn't overlap with nav */
+    /* Content padding */
     #bd {
-        padding-top: var(--pbs-spacing-lg) !important;
+        padding: var(--pbs-spacing-lg) !important;
+    }
+
+    /* Ensure readable text margins on mobile */
+    #masterContentArea p,
+    .ContentArea p,
+    .TextContent p {
+        margin: 0 0 var(--pbs-spacing-md) 0 !important;
+        padding: 0 !important;
+        line-height: 1.6 !important;
     }
 }
 
